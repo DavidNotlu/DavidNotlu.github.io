@@ -1,0 +1,102 @@
+<!--Index page for resume website-->
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Lu</title>
+
+    <link rel="stylesheet" href="./assets/scss/main.scss">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+  </head>
+  <body>
+    <div class="parallax_wrapper">
+      <!-- Navabar Starts-->
+      <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#intro">Home</a>
+              <a class="nav-link" href="#group-1">About</a>
+              <a class="nav-link" href="#group-2">Projects</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--Navbar ends-->
+      <div class="parallax_group intro_screen" id="intro">
+        <section>
+          <div class="center">
+          <h1 class="layer" data-speed="4">DAVID LU</h1>
+          </div>
+          <div class="header">
+            <h2 class="layer" data-speed="3">University of Oklahoma | Computer Science | May 2025</h2>
+          </div>
+          <div class="button">
+
+        <!--Auto Scroll button-->
+        <li>
+           <a role="button" class="btn btn-outline-light layer" href="#group-1"
+           data-speed="2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg></i></a>
+        </li>
+        <!--Auto Scroll Button Ends-->
+
+           </div>
+        </section>
+       
+         
+        <!--Title Parallax Javascript links to main.js-->
+        <script type="text/javascript">
+          document.addEventListener("mousemove", parallax);
+        function parallax(e) {
+        this.querySelectorAll('.layer').forEach(layer => {
+            const speed = layer .getAttribute('data-speed')
+            
+            const x = (window.innerWidth - e.pageX * speed)/50
+            const y = (window.innerHeight - e.pageY * speed)/50
+    
+            layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+        })   
+       }
+        </script>
+      <!--Canvas particle effect-->
+         <canvas id="canvas1"></canvas>
+      </div>
+<!--About Page-->
+      <div class="parallax_group" id="group-1">
+        <div class="parallax_layer base_layer">
+          <iframe src='https://my.spline.design/totorocopy-6f189018707a3ae29ca8f17ab711945f/' frameborder='0' width='100%' height='100%'></iframe>
+          
+        </div>
+        <div class="parallax_layer mid_layer">
+          mid layer
+        </div>
+      </div>
+<!--Projects Page-->
+      <div class="parallax_group" id="group-2">
+        <div class="parallax_layer mid_layer">
+          background layer
+        </div>
+        <div class="parallax_layer top_layer">
+          top layer
+        </div>
+      </div>
+      <div class="parallax_group outro_screen" id="outro">
+        The End
+      
+      </div>
+    </div>
+ 
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

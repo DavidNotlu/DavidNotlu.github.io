@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;;;AAMC","sources":["src/assets/css/style.css"],"sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\n #canvas1 {\n    background: transparent;\n    position: absolute;\n}\n\n"],"names":[],"version":3,"file":"index.07fedde6.css.map","sourceRoot":"/__parcel_source_root/"}
