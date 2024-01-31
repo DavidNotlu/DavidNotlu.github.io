@@ -1,11 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
- #canvas1 {
-    background: transparent;
+
+section {
+    position: relative;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+section h1 {
+    font-size: calc(3.525rem + 3.3vw);
+  }
+  
+  @media (min-width: 1200px) {
+    section h1 {
+      font-size: 10rem;
+    }
+  }
+section h1 {
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    
+    -webkit-font-smoothing: antialiased;
+    align-items: center;
+	user-select: none;
+    color: white;
+    margin: auto;
+    letter-spacing: 1.5vh;
+    display:table-cell;
+      
+    
+}
+section h2 {
+    position: relative;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    align-items: center;
+	user-select: none;
+}
+
+.button {
+    transform: translateY(20vh);
+    z-index: 1;
+    float: inline-end;
+    background-size: contain;
+    position: center;
+}
+.header {
     position: absolute;
+    padding: -10px 0;
+    background-size: contain;
+    transform: translateY(10vh);
 }
 
+
+.center {
+    position: absolute;
+    padding: 10px 0;
+    transform: translateX(1.5vh);
+    
+}
+
+body {
+    
+    .parallax_wrapper {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        perspective: 300px;
+        scroll-behavior: smooth;
+        scroll-snap-type: y proximity;
+        
+
+        .intro_screen {
+            height: 200vh;
+            background-image: url(/images/intro.jpg);
+            background-size: cover;
+            background-blend-mode: multiply;
+            background-color: (117, 117, 117);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .outro_screen {
+            height: 100vh;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parallax_group {
+            position: relative;
+            height: 100vh;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+
+            .parallax_layer {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                justify-content: center;
+                 align-items: center;
+                
+            }
+
+            .base_layer {
+                transform: translateZ(-300px) scale(2.1);
+                z-index: -1;
+            }
+
+            .mid_layer {
+                pointer-events: none;
+                transform: translateZ(0);
+                
+            }
+
+            .top_layer {
+                transform: translateZ(210px) scale(0.3);
+            }
+        }
+
+        #intro {
+            z-index: 0;
+        }
+
+        #group-1 {
+            z-index: -1;
+            
+        }
+
+        #group-1 > .base_layer {
+            background-color: rgb(97, 97, 97);
+        }
+
+        #group-2 {
+
+        }
+
+        #group-2 > .mid_layer {
+            background-color: rgb(189, 189, 189);
+        }
+
+        #outro {
+            background-color: rgb(66, 66, 66);
+        }
+    }
+}
