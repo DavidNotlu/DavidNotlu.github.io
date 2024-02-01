@@ -17,9 +17,10 @@ section {
     width: 100%;
     
     display: flex;
-    justify-content: center;
     align-items: center;
     margin: auto;
+}
+
 }
 
 section h1 {
@@ -28,9 +29,20 @@ section h1 {
   
   @media (min-width: 1200px) {
     section h1 {
-      font-size: 10rem;
+      font-size: 9rem;
     }
   }
+
+section h2 {
+    font-size: calc(1.25rem + .5vw);
+  }
+  
+  @media (min-width: 1200px) {
+    section h2 {
+      font-size: 2rem;
+    }
+  }
+
 section h1 {
     position: relative;
     font-family: 'Lato', sans-serif;
@@ -41,10 +53,8 @@ section h1 {
     color: white;
     margin: auto;
     letter-spacing: 1.5vh;
-    display:table-cell;
-      
-    
 }
+
 section h2 {
     position: relative;
     color: white;
@@ -55,7 +65,6 @@ section h2 {
 
 .button {
     transform: translateY(20vh);
-    z-index: 1;
     float: inline-end;
     background-size: contain;
     position: center;
@@ -76,7 +85,10 @@ section h2 {
 }
 
 
+
 body {
+    .background {
+    }
     
     .parallax_wrapper {
         height: 100vh;
@@ -87,16 +99,15 @@ body {
         scroll-snap-type: y proximity;
         
 
-        .intro_screen {
+        .intro_screen { 
             height: 200vh;
-            background-image: url(/images/intro.jpg);
-            background-size: cover;
-            background-blend-mode: multiply;
-            background-color: (117, 117, 117);
-            display: flex;
+            background: rgba(10, 46, 79, 1.0);
+            background: radial-gradient(at center bottom, rgba(10, 46, 79, 1.0), rgba(0, 0, 0, 1.0));
             justify-content: center;
             align-items: center;
+            display: flex;
         }
+
 
         .outro_screen {
             height: 100vh;
@@ -121,13 +132,17 @@ body {
                 inset: 0;
                 display: flex;
                 justify-content: center;
-                 align-items: center;
+                align-items: center;
                 
             }
 
             .base_layer {
                 transform: translateZ(-300px) scale(2.1);
                 z-index: -1;
+
+                background: rgba(10, 46, 79, 1.0);
+                background: radial-gradient(at center top, rgba(11, 56, 82, 1.0), rgba(10, 46, 79, 1.0), rgba(5, 20, 55, 1.0), rgba(0, 0, 0, 1.0));
+                
             }
 
             .mid_layer {
@@ -142,20 +157,28 @@ body {
         }
 
         #intro {
-            z-index: 0;
+            z-index: 1;
         }
+        
 
         #group-1 {
-            z-index: -1;
+            z-index: -1;        
+        }
+        
+
+        #group-1 > .base_layer {
+/*
+            background: rgba(10, 46, 79, 1.0);
+            background: radial-gradient(at center top, rgba(11, 56, 82, 1.0), rgba(10, 46, 79, 1.0), rgba(10, 30, 60, 1.0), rgba(0, 0, 0, 1.0));
+*/
+        }
+        
+        #group-1 > .mid_layer {
             
         }
 
-        #group-1 > .base_layer {
-            background-color: rgb(97, 97, 97);
-        }
-
         #group-2 {
-
+            z-index: 3;
         }
 
         #group-2 > .mid_layer {
@@ -164,6 +187,7 @@ body {
 
         #outro {
             background-color: rgb(66, 66, 66);
+            z-index: 3;
         }
     }
 }
