@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: radial-gradient(at center bottom, rgba(10, 46, 79, 1.0), rgba(0, 0, 0, 1.0));
+}
+
  #canvas1 {
     background: transparent;
     position: absolute;
@@ -15,7 +19,6 @@
 section {
     position: relative;
     width: 100%;
-    
     display: flex;
     align-items: center;
     margin: auto;
@@ -44,6 +47,7 @@ section h2 {
   }
 
 section h1 {
+    text-align: center;
     position: relative;
     font-family: 'Lato', sans-serif;
     
@@ -56,8 +60,10 @@ section h1 {
 }
 
 section h2 {
+    text-align: center;
     position: relative;
     color: white;
+    margin: auto;
     font-family: 'Lato', sans-serif;
     align-items: center;
 	user-select: none;
