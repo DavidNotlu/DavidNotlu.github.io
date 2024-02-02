@@ -24,15 +24,16 @@
             const y = Math.floor(Math.random()*document.documentElement.clientHeight + (Math.random()*2000));
  
             if(index<length-1)
-                output += `${x}px ${y}px #FFF , `;
+                output += `${x}px ${y}px rgba(255,255,255, 0.9) , `;
             else
-                output += `${x}px ${y}px #FFF`
+                output += `${x}px ${y}px rgba(255,255,255, 0.9)`
             }
         return output;
     }
-        const values = generateRandomStars(1000);
-        const values2 = generateRandomStars(400);
-        const values3 = generateRandomStars(200);
+    const x = document.documentElement.clientHeight / document.documentElement.clientWidth
+        const values = generateRandomStars(800/x);
+        const values2 = generateRandomStars(200/x);
+        const values3 = generateRandomStars(50/x);
 
         document.documentElement.style.setProperty('--value1',values);
         document.documentElement.style.setProperty('--value2',values2);
