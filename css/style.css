@@ -7,7 +7,14 @@
 }
 
 body {
+    background: rgba(10, 46, 79, 1.0);
     background: radial-gradient(at center bottom, rgba(10, 46, 79, 1.0), rgba(0, 0, 0, 1.0));
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
  #canvas1 {
@@ -160,6 +167,12 @@ body {
             .top_layer {
                 transform: translateZ(210px) scale(0.3);
             }
+            .background_layer {
+                pointer-events: none;
+                transform: translateZ(0);
+                background: #2E1B4B;
+                background: radial-gradient(at center bottom, #2E1B4B, #01172A);
+            }
         }
 
         #intro {
@@ -184,7 +197,7 @@ body {
         }
 
         #group-2 {
-            z-index: 3;
+            z-index: ;
         }
 
         #group-2 > .mid_layer {

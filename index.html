@@ -13,12 +13,52 @@
 
   </head>
   <body>
+<!--random star generator for stars.css-->
+<script type="text/javascript">
+  
+    function generateRandomStars(length) {
+        let output = "";
+        for(let index = 0;index<length;index++){
+ 
+            const x = Math.floor(Math.random()*document.documentElement.clientWidth);
+            const y = Math.floor(Math.random()*document.documentElement.clientHeight + (Math.random()*2000));
+ 
+            if(index<length-1)
+                output += `${x}px ${y}px #FFF , `;
+            else
+                output += `${x}px ${y}px #FFF`
+            }
+        return output;
+    }
+        const values = generateRandomStars(1000);
+        const values2 = generateRandomStars(400);
+        const values3 = generateRandomStars(200);
+
+        document.documentElement.style.setProperty('--value1',values);
+        document.documentElement.style.setProperty('--value2',values2);
+        document.documentElement.style.setProperty('--value3',values3);
     
+    </script>
+<!--Title Parallax Javascript links to main.js-->   
+    <script type="text/javascript">
+          document.addEventListener("mousemove", parallax);
+        function parallax(e) {
+        this.querySelectorAll('.layer').forEach(layer => {
+            const speed = layer .getAttribute('data-speed')
+            
+            const x = (window.innerWidth - e.pageX * speed)/50
+            const y = (window.innerHeight - e.pageY * speed)/50
+    
+            layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+        })   
+       }
+        </script>
+      
     <div class="parallax_wrapper">
         
         <section class="stars_wrapper">
-             <div class="layer" data-speed="-100" id="stars"></div>
-            <div class="layer" data-speed="-100" id="stars2"></div>
+             <div class="layer" id="stars"></div>
+            <div class="layer" id="stars2"></div>
             <div class="layer" data-speed=".5" id="stars3"></div>
         </section>
 
@@ -46,6 +86,7 @@
       <!-- Navabar Starts-->
 
       <!--Navbar ends-->
+        
       <div class="parallax_group intro_screen" id="intro">
         <section style="justify-content: center">
           <div class="center">
@@ -69,21 +110,6 @@
            </div>
         </section>
        
-         
-        <!--Title Parallax Javascript links to main.js-->
-        <script type="text/javascript">
-          document.addEventListener("mousemove", parallax);
-        function parallax(e) {
-        this.querySelectorAll('.layer').forEach(layer => {
-            const speed = layer .getAttribute('data-speed')
-            
-            const x = (window.innerWidth - e.pageX * speed)/50
-            const y = (window.innerHeight - e.pageY * speed)/50
-    
-            layer.style.transform = `translateX(${x}px) translateY(${y}px)`
-        })   
-       }
-        </script>
 
       <!--Canvas particle effect-->
 <!--         <canvas id="canvas1"></canvas>-->
@@ -106,8 +132,7 @@
 </div>
                 </div>
             </section>
-            
-            
+
             
         </div>
         <div class="parallax_layer mid_layer" id="base">
@@ -116,7 +141,7 @@
       </div>
 <!--Projects Page-->
       <div class="parallax_group" id="group-2">
-        <div class="parallax_layer mid_layer" id="about">
+        <div class="parallax_layer background_layer" id="about">
           background layer
         </div>
         <div class="parallax_layer top_layer" id="about">
@@ -132,6 +157,7 @@
     <script type="module" src="/js/main.js"></script>
 
     <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
